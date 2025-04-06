@@ -20,7 +20,7 @@ const CourseDetails = () => {
         axios.delete(`${process.env.REACT_APP_API_URL}/api/course/${id}`, {
             headers: {
                 'Content-Type': 'application/json',
-                // 'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`
             },
         })
             .then(() => {

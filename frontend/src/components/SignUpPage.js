@@ -18,26 +18,26 @@ export const SignUpPage = () => {
 
     const onSignUpClicked = async () => {
         //TODO: 11 - Uncomment the following lines to enable signup
-        // try {
-        //     const response = await axios.post(
-        //         `${process.env.REACT_APP_API_URL}/api/signup`,
-        //         {
-        //             name,
-        //             email,
-        //             password,
-        //         },
-        //         {
-        //             headers: {
-        //                 'Content-Type': 'application/json',
-        //             },
-        //         }
-        //     );
-        //     console.log(response.data);
-        //     navigate('/login');
-        // } catch (error) {
-        //     setError(error.response.data.message);
-        //     console.log(error);
-        // }
+         try {
+             const response = await axios.post(
+                 `${process.env.REACT_APP_API_URL}/api/signup`,
+                 {
+                     name,
+                     email,
+                     password,
+                 },
+                 {
+                     headers: {
+                         'Content-Type': 'application/json',
+                     },
+                 }
+             );
+             console.log(response.data);
+             navigate('/login');
+         } catch (error) {
+             setError(error.response.data.message);
+             console.log(error);
+         }
     };
 
     return (

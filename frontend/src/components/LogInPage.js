@@ -15,22 +15,22 @@ export const LogInPage = () => {
 
     const onLoginClicked = async () => {
         //TODO: 10 - Uncomment the following lines to enable login
-        // try {
-        //     const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login`, {
-        //         email: email,
-        //         password: password,
-        //     });
-        //     const { token } = response.data;
-        //     setToken(token);
-        //     navigate(-1);
-        // } catch (err) {
-        //     if (err.response.status === 401) {
-        //         setError("Invalid Username or passord.")
-        //     } else {
-        //         console.log(err);
-        //         setError(err.message);
-        //     }
-        // }
+         try {
+             const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login`, {
+                 email: email,
+                 password: password,
+             });
+             const { token } = response.data;
+             setToken(token);
+             navigate(-1);
+         } catch (err) {
+             if (err.response.status === 401) {
+                 setError("Invalid Username or passord.")
+             } else {
+                 console.log(err);
+                 setError(err.message);
+             }
+         }
     }
 
     const onSignUpClicked = async () => {

@@ -12,7 +12,7 @@ import CourseUpdate from './components/CourseUpdate';
 import { LogInPage } from './components/LogInPage';
 import { SignUpPage } from './components/SignUpPage';
 //TODO: 7 - Uncomment to Import PrivateRoute
-//import { PrivateRoute } from './auth/PrivateRoute';
+import { PrivateRoute } from './auth/PrivateRoute';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -27,9 +27,9 @@ root.render(
         <Route path="/courses" element={<CourseList />} />
         <Route path="/courses/:id" element={<CourseDetails />} />
         {/* TODO: 8 - change element for CourseAdd to <PrivateRoute><CourseAdd /></PrivateRoute>*/}
-        <Route path="/courses/add" element={<CourseAdd />} />
+        <Route path="/courses/add" element={<PrivateRoute><CourseAdd /></PrivateRoute>} />
         {/* TODO: 9 - change element for CourseUpdate to <PrivateRoute><CourseUpdate /></PrivateRoute>*/}
-        <Route path="/courses/update/:id" element={<CourseUpdate />} />
+        <Route path="/courses/update/:id" element={<PrivateRoute><CourseUpdate /></PrivateRoute>} />
       </Routes>
     </Router>
 

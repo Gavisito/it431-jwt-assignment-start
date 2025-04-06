@@ -21,7 +21,7 @@ const CourseAdd = () => {
         axios.post(`${process.env.REACT_APP_API_URL}/api/course/`, course, {
             headers: {
                 'Content-Type': 'application/json',
-                // 'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`
             }
         })
             .then(response => {
